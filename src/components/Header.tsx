@@ -117,14 +117,14 @@ export const Header = () => {
                                     <Flex paddingX="2" hide="s">{about.label}</Flex>
                                 </ToggleButton>
                             )}
-                            { routes['/work'] && (
+                            {/* { routes['/work'] && (
                                 <ToggleButton
                                     prefixIcon="grid"
                                     href={`/${params?.locale}/work`}
                                     selected={pathname.startsWith('/work')}>
                                     <Flex paddingX="2" hide="s">{work.label}</Flex>
                                 </ToggleButton>
-                            )}
+                            )} */}
                             { routes['/blog'] && (
                                 <ToggleButton
                                     prefixIcon="book"
@@ -133,14 +133,14 @@ export const Header = () => {
                                     <Flex paddingX="2" hide="s">{blog.label}</Flex>
                                 </ToggleButton>
                             )}
-                            { routes['/gallery'] && (
+                            {/* { routes['/gallery'] && (
                                 <ToggleButton
                                     prefixIcon="gallery"
                                     href={`/${params?.locale}/gallery`}
                                     selected={pathname.startsWith('/gallery')}>
                                     <Flex paddingX="2" hide="s">{gallery.label}</Flex>
                                 </ToggleButton>
-                            )}
+                            )} */}
                         </Flex>
                     </Flex>
                 </Flex>
