@@ -254,6 +254,42 @@ const about = {
                 ]
             }
         ]
+    },
+    portfolio: {
+        display: true, // set to false to hide this section
+        title: 'Portfolio',
+        projects: [
+            {
+                title: 'Northino Learning',
+                image: '/images/portfolio/northino.png',
+                url: 'https://learning.northino.com/'
+            },
+            {
+                title: 'Northino Studio',
+                image: '/images/portfolio/studio.png',
+                url: 'https://studio.northino.com/'
+            },
+            {
+                title: 'Ctrl F2',
+                image: '/images/portfolio/ctrlf2.png',
+                url: 'https://ctrlf2.com/'
+            },
+            {
+                title: 'The Chop Nation',
+                image: '/images/portfolio/chop-nation.png',
+                url: 'http://thechopnation.com/'
+            },
+            {
+                title: 'My Halal Hibachi',
+                image: '/images/portfolio/hibachi.png',
+                url: 'http://myhalalhibachi.com/'
+            },
+            {
+                title: 'Rawad Salam',
+                image: '/images/portfolio/assalam.png',
+                url: 'https://rawadalsalam.com/'
+            }
+        ]
     }
 }
 

@@ -1,4 +1,4 @@
-import { Avatar, Button, Flex, Heading, Icon, IconButton, SmartImage, Tag, Text } from '@/once-ui/components';
+import { Avatar, Button, Flex, Grid, Heading, Icon, IconButton, SmartImage, Tag, Text } from '@/once-ui/components';
 import { baseURL, renderContent } from '@/app/resources';
 import TableOfContents from '@/components/about/TableOfContents';
 import styles from '@/components/about/about.module.scss'
@@ -64,6 +64,11 @@ export default function About(
             title: about.technical.title,
             display: about.technical.display,
             items: about.technical.skills.map(skill => skill.title)
+        },
+        { 
+            title: about.portfolio.title,
+            display: about.portfolio.display,
+            items: about.portfolio.projects.map(project => project.title)
         },
     ]
     return (
@@ -332,7 +337,7 @@ export default function About(
                             </Heading>
                             <Flex
                                 direction="column"
-                                fillWidth gap="l">
+                                fillWidth gap="l" marginBottom="40">
                                 {about.technical.skills.map((skill, index) => (
                                     <Flex
                                         key={`${skill}-${index}`}
@@ -371,6 +376,53 @@ export default function About(
                                     </Flex>
                                 ))}
                             </Flex>
+                        </>
+                    )}
+
+                    { about.portfolio.display && (
+                        <>
+                            <Heading
+                                as="h2"
+                                id={about.portfolio.title}
+                                variant="display-strong-s" marginBottom="40">
+                                {about.portfolio.title}
+                            </Heading>
+                            <Grid
+                                columns="repeat(auto-fit, minmax(280px, 1fr))"
+                                mobileColumns="1col"
+                                fillWidth gap="16">
+                                {about.portfolio.projects.map((project, index) => (
+                                    <a
+                                        key={`${project.title}-${index}`}
+                                        href={project.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        <Flex
+                                            direction="column"
+                                            style={{ cursor: 'pointer', height: '100%' }}
+                                            border="neutral-medium"
+                                            borderStyle="solid-1"
+                                            radius="l"
+                                            padding="16"
+                                            gap="12">
+                                            <SmartImage
+                                                radius="m"
+                                                aspectRatio="16 / 9"
+                                                alt={project.title}
+                                                src={project.image}
+                                                style={{
+                                                    border: '1px solid var(--neutral-alpha-weak)',
+                                                    width: '100%'
+                                                }}/>
+                                            <Text
+                                                variant="heading-strong-m">
+                                                {project.title}
+                                            </Text>
+                                        </Flex>
+                                    </a>
+                                ))}
+                            </Grid>
                         </>
                     )}
                 </Flex>
